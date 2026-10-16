@@ -29,11 +29,14 @@ changing what the roles mean.
 
 ## Install
 
-Requires **Python 3.9+** and **ffmpeg**.
+You need **Python 3.9+**, **ffmpeg**, and an **ElevenLabs API key**. The key is the only
+paid part: it covers the voiceover and the word-level timings.
+
+Clone it straight into your Claude skills folder so Claude finds it:
 
 ```bash
-git clone https://github.com/korvxdev/kinetic-vsl-engine.git
-cd kinetic-vsl-engine
+git clone https://github.com/korvxdev/kinetic-vsl-engine.git ~/.claude/skills/kinetic-vsl-engine
+cd ~/.claude/skills/kinetic-vsl-engine
 pip install -r requirements.txt
 ./setup.sh                       # fetches the Poppins fonts
 cp .env.example .env             # then put your ElevenLabs key in it
@@ -46,21 +49,25 @@ brew install ffmpeg              # macOS
 sudo apt install ffmpeg          # Debian/Ubuntu
 ```
 
+Get an ElevenLabs key at <https://elevenlabs.io/app/settings/api-keys>.
+
 ## Use it with Claude
 
-Copy the whole folder into your skills directory so Claude picks it up:
+Once it is in `~/.claude/skills/`, just ask:
 
-```bash
-cp -r kinetic-vsl-engine ~/.claude/skills/
-```
-
-Then just ask:
-
-> Make me a kinetic VSL for my offer. Here's the script.
+> Make me a kinetic VSL ad for my offer. Here's the script.
 
 Claude reads `SKILL.md`, writes the beats and colour roles, runs the linter, generates
 the voiceover, checks the pacing, and renders. `SKILL.md` is the whole operating manual,
 including the failure modes that are easy to reintroduce.
+
+To check the install worked before using it for real:
+
+```bash
+python3 kinetic_vsl.py example-script.json
+```
+
+That generates the voiceover and prints the words-per-second, without rendering.
 
 ## Use it on its own
 
