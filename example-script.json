@@ -1,0 +1,19 @@
+{
+  "root_dir": "./out",
+  "slug": "demo-cold-email",
+  "title": "Demo - Kinetic - Cold Email - v1",
+  "voice": "CwhRBWXzGAHq8TQ4Fs17",
+  "font_size": 76,
+  "beats": [
+    {"spans": [["400 emails.", "pain"], ["2 replies.", "pain"], ["One month gone.", "pain"]]},
+    {"spans": [["If that is your outbound,", "plain"], ["the problem was never the volume.", "win"]]},
+    {"spans": [["You are sending the same message to people who want different things,", "plain"], ["so it reads as a template to every one of them.", "pain"]]},
+    {"bullets": {"items": [
+      ["cross", "You do not need a bigger list."],
+      ["cross", "You do not need a new sending tool."],
+      ["check", "You need the first line to be about them."]]}},
+    {"spans": [["One line of real research per prospect", "win"], ["changes the reply rate more than doubling the send volume ever will.", "plain"]]},
+    {"spans": [["It takes about 90 seconds a prospect.", "plain"], ["Most people will not do it.", "pain"], ["That is the whole advantage.", "win"]]},
+    {"cta": "See the\nfirst-line framework"}
+  ]
+}

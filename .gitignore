@@ -1,0 +1,10 @@
+.env
+fonts/*.ttf
+out/
+frames/
+vo/
+*.mp4
+*.wav
+__pycache__/
+*.pyc
+.DS_Store
