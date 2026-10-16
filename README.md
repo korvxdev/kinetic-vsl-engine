@@ -37,7 +37,7 @@ Clone it straight into your Claude skills folder so Claude finds it:
 ```bash
 git clone https://github.com/korvxdev/kinetic-vsl-engine.git ~/.claude/skills/kinetic-vsl-engine
 cd ~/.claude/skills/kinetic-vsl-engine
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ./setup.sh                       # fetches the Poppins fonts
 cp .env.example .env             # then put your ElevenLabs key in it
 ```

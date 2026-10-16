@@ -5,15 +5,157 @@
   "voice": "CwhRBWXzGAHq8TQ4Fs17",
   "font_size": 76,
   "beats": [
-    {"spans": [["400 emails.", "pain"], ["2 replies.", "pain"], ["One month gone.", "pain"]]},
-    {"spans": [["If that is your outbound,", "plain"], ["the problem was never the volume.", "win"]]},
-    {"spans": [["You are sending the same message to people who want different things,", "plain"], ["so it reads as a template to every one of them.", "pain"]]},
-    {"bullets": {"items": [
-      ["cross", "You do not need a bigger list."],
-      ["cross", "You do not need a new sending tool."],
-      ["check", "You need the first line to be about them."]]}},
-    {"spans": [["One line of real research per prospect", "win"], ["changes the reply rate more than doubling the send volume ever will.", "plain"]]},
-    {"spans": [["It takes about 90 seconds a prospect.", "plain"], ["Most people will not do it.", "pain"], ["That is the whole advantage.", "win"]]},
-    {"cta": "See the\nfirst-line framework"}
+    {
+      "spans": [
+        [
+          "400 emails.",
+          "pain"
+        ],
+        [
+          "2 replies.",
+          "pain"
+        ],
+        [
+          "One month gone.",
+          "pain"
+        ]
+      ]
+    },
+    {
+      "spans": [
+        [
+          "If that is your outbound,",
+          "plain"
+        ],
+        [
+          "the problem was never the volume.",
+          "win"
+        ]
+      ]
+    },
+    {
+      "spans": [
+        [
+          "You are sending the same message to people who want different things,",
+          "plain"
+        ],
+        [
+          "so it reads as a template to every one of them.",
+          "pain"
+        ]
+      ]
+    },
+    {
+      "spans": [
+        [
+          "And a template is the one thing a busy person can delete without reading,",
+          "pain"
+        ],
+        [
+          "because deleting it costs them nothing.",
+          "plain"
+        ]
+      ]
+    },
+    {
+      "spans": [
+        [
+          "Everyone tells you to send more.",
+          "plain"
+        ],
+        [
+          "So the inbox gets louder and your reply rate gets worse,",
+          "pain"
+        ],
+        [
+          "and you conclude the channel is dead.",
+          "pain"
+        ]
+      ]
+    },
+    {
+      "bullets": {
+        "items": [
+          [
+            "cross",
+            "You do not need a bigger list."
+          ],
+          [
+            "cross",
+            "You do not need a new sending tool."
+          ],
+          [
+            "check",
+            "You need the first line to be about them."
+          ]
+        ]
+      }
+    },
+    {
+      "spans": [
+        [
+          "One line of real research per prospect",
+          "win"
+        ],
+        [
+          "moves the reply rate further than doubling the send volume ever will.",
+          "plain"
+        ]
+      ]
+    },
+    {
+      "spans": [
+        [
+          "Not flattery. Not their funding round.",
+          "plain"
+        ],
+        [
+          "Something that proves you actually looked.",
+          "win"
+        ]
+      ]
+    },
+    {
+      "spans": [
+        [
+          "The research is not deep.",
+          "plain"
+        ],
+        [
+          "One specific thing they said, built, shipped or complained about in public,",
+          "win"
+        ],
+        [
+          "put in the first sentence so they know it is not a blast.",
+          "plain"
+        ]
+      ]
+    },
+    {
+      "cards": [
+        "Research.",
+        "Write.",
+        "Send."
+      ]
+    },
+    {
+      "spans": [
+        [
+          "It takes about 90 seconds a prospect.",
+          "plain"
+        ],
+        [
+          "Most people will not do it.",
+          "pain"
+        ],
+        [
+          "That is the whole advantage.",
+          "win"
+        ]
+      ]
+    },
+    {
+      "cta": "See the\nfirst-line framework"
+    }
   ]
 }
