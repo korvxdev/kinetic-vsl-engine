@@ -21,7 +21,7 @@ approximate all three.
     python3 kinetic_vsl.py script.json            # VO + timings, then stop
     python3 kinetic_vsl.py script.json --render    # full video
 """
-import argparse, json, math, os, pathlib, re, shutil, string, subprocess, sys
+import argparse, hashlib, json, math, os, pathlib, re, shutil, string, subprocess, sys
 from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageFilter
 
 W, H, FPS = 1080, 1920, 30
@@ -499,13 +499,29 @@ def main():
     spoken = " ".join(x for x in (beat_text(b) for b in beats) if x)
 
     wav = vo_dir/f"{slug}.wav"
+    wj  = vo_dir/f"{slug}.words.json"
     key = el_key()
+
+    # The VO is cached on disk, but it must be invalidated when the script changes.
+    # Keying the cache on the slug alone silently reuses the old audio after an edit
+    # and aligns the new script against the old transcript, which renders a broken
+    # video with no error. Fingerprint the spoken text instead. tighten_vo.py rewrites
+    # the wav in place without changing the words, so tightening does not invalidate.
+    sig_f = vo_dir/f"{slug}.vo.sig"
+    sig = hashlib.sha256(
+        (spoken + "|" + job.get("voice", "CwhRBWXzGAHq8TQ4Fs17")).encode()).hexdigest()
+    stale = (not wav.exists()) or (not sig_f.exists()) or sig_f.read_text().strip() != sig
+    if stale and wav.exists():
+        print("Script or voice changed since the cached VO. Regenerating.")
+        for f in (wav, wj, vo_dir/f"{slug}_raw.wav", vo_dir/f"{slug}_raw.words.json"):
+            if f.exists(): f.unlink()
+
     if not wav.exists():
         print("Generating VO...")
         generate_vo(key, job.get("voice","CwhRBWXzGAHq8TQ4Fs17"), spoken, wav)
+        sig_f.write_text(sig)
     dur = probe(wav)
 
-    wj = vo_dir/f"{slug}.words.json"
     if not wj.exists():
         print("Transcribing for word timings...")
         wj.write_text(json.dumps(transcribe(key, wav), indent=2))
